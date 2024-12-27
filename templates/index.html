@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Roaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>LinkedIn Roaster</h1>
+        <form id="uploadForm">
+            <div class="file-input">
+                <label for="file" class="file-label">Upload Your LinkedIn Profile (PDF):</label>
+                <div class="custom-file-upload">
+                    <input type="file" id="file" name="file" accept=".pdf" required>
+                    <span>Choose File</span>
+                </div>
+                <!-- Display file name after file is selected -->
+                <div id="fileName" class="file-name"></div>
+            </div>
+            <button type="submit" id="roastButton">Roast</button>
+        </form>
+        <a href="https://www.linkedin.com/help/linkedin/answer/a541960/printing-a-profile?lang=en" target="_blank" style="margin-top: 20px; font-size: smaller;">Steps to download your linkedIn profile PDF</a>
+    </div>
+
+    <div id="output">
+        <div id="outputBox" class="container">
+            <div id="outputContent"></div>
+            <div id="credits"> - LinkedIn Roaster by Saksham Jain</div>
+        </div>
+    </div>
+
+    <div id="buttonGroup" style="display: none;">
+        <button id="downloadBtn">Download</button>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
