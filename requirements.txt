@@ -1,3 +1,4 @@
 Flask==3.1.0
 pdfminer.six==20240706
 langchain-google-genai==2.0.6  # Use the correct version of langchain-google-genai
+python-env==1.0.1
