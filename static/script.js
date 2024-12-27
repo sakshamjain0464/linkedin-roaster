@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Form submission event
     const uploadForm = document.getElementById('uploadForm');
+    const loaderContainer = document.getElementById('loaderContainer');
     uploadForm.addEventListener('submit', function (event) {
         event.preventDefault();
+        loaderContainer.style.display = 'flex'; // Show loader
         document.getElementById('outputBox').style.display = 'none';
         const outputContent = document.getElementById('outputContent')
         outputContent.textContent = "";
@@ -42,11 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 const outputContent = document.getElementById('outputContent')
                 outputContent.textContent = data.output;
                 document.getElementById("buttonGroup").style.display = 'flex'
+                loaderContainer.style.display = 'none';
             })
             .catch(error => {
                 console.error('Error:', error);
             });
     });
+    loaderContainer.style.display = 'none';
 });
 
 const downloadBtn = document.getElementById("downloadBtn")

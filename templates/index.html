@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <div id="loaderContainer">
+        <div class="loader"></div>
+    </div>
     <div class="container">
         <h1>LinkedIn Roaster</h1>
         <form id="uploadForm">
@@ -36,7 +39,9 @@
     <div id="buttonGroup" style="display: none;">
         <button id="downloadBtn">Download</button>
     </div>
-    <p style="text-align: center; position: absolute; bottom: 0px; width: 100%;">Created By - Saksham Jain</p>
+    <div style="text-align: center; width: 100%;">
+        <p>Created By - Saksham Jain</p>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
