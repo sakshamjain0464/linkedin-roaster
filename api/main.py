@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
 from pdfminer.high_level import extract_text
 from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-API_KEY = "AIzaSyBxOZp4TslWp1bQ5FtPwUsuJ7AvEaKmHtE"
+API_KEY=os.getenv("API_KEY")
 
 chat_model = ChatGoogleGenerativeAI(
     api_key=API_KEY, model="gemini-1.5-flash", temperature=0.6
